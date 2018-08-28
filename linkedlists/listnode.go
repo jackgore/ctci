@@ -1,8 +1,24 @@
 package linkedlists
 
+import (
+	"fmt"
+)
+
 type ListNode struct {
 	value int
 	next  *ListNode
+}
+
+func (l *ListNode) print() string {
+	cur := l
+	msg := ""
+
+	for cur != nil {
+		msg += fmt.Sprintf("[ %v ] --> ", cur.value)
+		cur = cur.next
+	}
+
+	return msg
 }
 
 func ListNodeLength(l *ListNode) int {
